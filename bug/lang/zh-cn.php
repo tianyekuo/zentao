@@ -64,6 +64,7 @@ $lang->bug->lastEditedDate   = '修改日期';
 $lang->bug->fromCase         = '来源用例';
 $lang->bug->toCase           = '生成用例';
 $lang->bug->colorTag         = '颜色标签';
+$lang->bug->lowBug           = '低级错误';
 
 /* 方法列表。*/
 $lang->bug->index              = '首页';
@@ -236,6 +237,10 @@ $lang->bug->resolutionList['notrepro']   = '无法重现';
 $lang->bug->resolutionList['postponed']  = '延期处理';
 $lang->bug->resolutionList['willnotfix'] = "不予解决";
 $lang->bug->resolutionList['tostory']    = '转为需求';
+
+$lang->bug->lowBugList[0] = '否';
+$lang->bug->lowBugList[1] = '是';
+
 
 /* 统计报表。*/
 $lang->bug->report = new stdclass();

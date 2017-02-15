@@ -254,6 +254,7 @@ class bug extends control
         $keywords   = '';
         $severity   = 3;
         $type       = 'codeerror';
+        $lowBug     = 0;
 
         /* Parse the extras. */
         $extras = str_replace(array(',', ' '), array('&', ''), $extras);
@@ -344,6 +345,7 @@ class bug extends control
         $this->view->type             = $type;
         $this->view->branch           = $branch;
         $this->view->branches         = $branches;
+        $this->view->lowBug           = $lowBug;
 
         $this->display();
     }
@@ -475,6 +477,7 @@ class bug extends control
         $this->view->actions     = $this->action->getList('bug', $bugID);
         $this->view->builds      = $this->loadModel('build')->getProductBuildPairs($productID, $branch = 0, $params = '');
         $this->view->preAndNext  = $this->loadModel('common')->getPreAndNextObject('bug', $bugID);
+        $this->view->lowBug      = $bug->lowBug;
 
         $this->display();
     }
@@ -529,6 +532,7 @@ class bug extends control
         $productID       = $bug->product;
         $projectID       = $bug->project;
         $currentModuleID = $bug->module;
+        $lowBug          = $bug->lowBug;
 
         /* Set the menu. */
         $this->bug->setMenu($this->products, $productID, $bug->branch);
@@ -577,6 +581,7 @@ class bug extends control
         $this->view->resolvedBuilds   = array('' => '') + $openedBuilds + $oldResolvedBuild;
         $this->view->actions          = $this->action->getList('bug', $bugID);
         $this->view->templates        = $this->bug->getUserBugTemplates($this->app->user->account);
+        $this->view->lowBug           = $bug->lowBug;
 
         $this->display();
     }

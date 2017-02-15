@@ -97,6 +97,8 @@ js::set('refresh', $lang->refresh);
             unset($lang->bug->typeList['trackthings']);
             echo html::select('type', $lang->bug->typeList, $type, "class='form-control'");
             ?>
+            <span class='input-group-addon fix-border'><?php echo $lang->bug->lowBug?></span>
+            <?php echo html::select('lowBug', $lang->bug->lowBugList, $lowBug, "class='form-control'");?>
             <?php if($showOS):?>
             <span class='input-group-addon fix-border'><?php echo $lang->bug->os?></span>
             <?php echo html::select('os', $lang->bug->osList, $os, "class='form-control'");?>

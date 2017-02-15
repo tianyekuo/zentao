@@ -153,6 +153,10 @@
                 <td><?php if(isset($lang->bug->typeList[$bug->type])) echo $lang->bug->typeList[$bug->type]; else echo $bug->type;?></td>
               </tr>
               <tr>
+                <th><?php echo $lang->bug->lowBug;?></th>
+                <td><span class='<?php echo 'lowBug' . zget($lang->bug->lowBug, $bug->lowBug);?>'><?php echo zget($lang->bug->lowBugList, $bug->lowBug)?></span></td>
+              </tr>
+              <tr>
                 <th><?php echo $lang->bug->severity;?></th>
                 <td><span class='<?php echo 'severity' . zget($lang->bug->severityList, $bug->severity);?>'><?php echo zget($lang->bug->severityList, $bug->severity)?></span></td>
               </tr>

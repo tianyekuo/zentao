@@ -21,7 +21,7 @@ $config->bug->list->allFields = 'id, module, project, story, task,
     duplicateBug, linkBug, 
     case,
     lastEditedBy,
-    lastEditedDate';
+    lastEditedDate, lowBug';
 $config->bug->list->defaultFields = 'id,severity,pri,title,openedBy,assignedTo,resolvedBy,resolution';
 
 $config->bug->list->exportFields = 'id, product, module, project, story, task, 
@@ -34,7 +34,7 @@ $config->bug->list->exportFields = 'id, product, module, project, story, task,
     duplicateBug, linkBug, 
     case,
     lastEditedBy,
-    lastEditedDate, files';
+    lastEditedDate, files,lowBug';
 
 $config->bug->list->customCreateFields      = 'project,story,task,pri,severity,os,browser,mailto,keywords';
 $config->bug->list->customBatchCreateFields = 'module,project,steps,type,pri,severity,os,browser,keywords';
@@ -141,6 +141,7 @@ $config->bug->search['params']['assignedDate']  = array('operator' => '=',      
 $config->bug->search['params']['resolvedDate']  = array('operator' => '=',      'control' => 'input',  'values' => '', 'class' => 'date');
 $config->bug->search['params']['closedDate']    = array('operator' => '=',      'control' => 'input',  'values' => '', 'class' => 'date');
 $config->bug->search['params']['lastEditedDate']= array('operator' => '=',      'control' => 'input',  'values' => '', 'class' => 'date');
+$config->bug->search['fields']['lowBug'] = $lang->bug->lowBug;
 
 $config->bug->datatable = new stdclass();
 $config->bug->datatable->defaultField = array('id', 'severity', 'pri', 'title', 'status', 'openedBy', 'openedDate', 'assignedTo', 'resolvedBy', 'resolution', 'resolvedDate', 'actions');
@@ -249,3 +250,4 @@ $config->bug->datatable->fieldList['branch']['title']    = 'branch';
 $config->bug->datatable->fieldList['branch']['fixed']    = 'left';
 $config->bug->datatable->fieldList['branch']['width']    = '100';
 $config->bug->datatable->fieldList['branch']['required'] = 'no';
+$config->bug->search['params']['lowBug']        = array('operator' => '=',       'control' => 'select', 'values' => $lang->bug->lowBugList);
