@@ -33,8 +33,9 @@
   <thead>
     <tr>
       <th class='w-id'><?php common::printOrderLink('id', $orderBy, $vars, $lang->idAB);?></th>
-      <th><?php common::printOrderLink('name', $orderBy, $vars, $lang->project->name);?></th>
+      <th class='w-300px'><?php common::printOrderLink('name', $orderBy, $vars, $lang->project->name);?></th>
       <th class='w-100px'><?php common::printOrderLink('code', $orderBy, $vars, $lang->project->code);?></th>
+      <th class='w-100px'><?php common::printOrderLink('openedBy', $openedBy, $vars,  $lang->openedByAB);?></th>
       <th class='w-90px'><?php common::printOrderLink('PM', $orderBy, $vars, $lang->project->PM);?></th>
       <th class='w-80px'><?php common::printOrderLink('end', $orderBy, $vars, $lang->project->end);?></th>
       <th class='w-80px'><?php common::printOrderLink('status', $orderBy, $vars, $lang->project->status);?></th>
@@ -60,6 +61,7 @@
     </td>
     <td class='text-left' title='<?php echo $project->name?>'><?php echo html::a($this->createLink('project', 'view', 'project=' . $project->id), $project->name);?></td>
     <td class='text-left'><?php echo $project->code;?></td>
+    <td><?php echo $users[$project->openedBy];?></td>
     <td><?php echo $users[$project->PM];?></td>
     <td><?php echo $project->end;?></td>
     <?php if(isset($project->delay)):?>

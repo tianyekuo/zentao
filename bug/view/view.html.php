@@ -26,6 +26,7 @@
     $params        = "bugID=$bug->id";
     $copyParams    = "productID=$productID&branch=$bug->branch&extras=bugID=$bug->id";
     $convertParams = "productID=$productID&branch=$bug->branch&moduleID=0&from=bug&bugID=$bug->id";
+    #$convertParams = "productID=$productID&branch=$bug->branch&assignTo=$bug->assignTo&moduleID=0&from=bug&bugID=$bug->id";
     if(!$bug->deleted)
     {
         ob_start();

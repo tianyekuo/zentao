@@ -224,6 +224,7 @@ class projectModel extends model
     {
         $this->lang->project->team = $this->lang->project->teamname;
         $project = fixer::input('post')
+            ->add('openedBy', $this->app->user->account)
             ->setDefault('status', 'wait')
             ->setIF($this->post->acl != 'custom', 'whitelist', '')
             ->setDefault('openedVersion', $this->config->version)

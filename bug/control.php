@@ -347,6 +347,8 @@ class bug extends control
         $this->view->branches         = $branches;
         $this->view->lowBug           = $lowBug;
 
+        
+        #var_dump($this->view->assignedTo);
         $this->display();
     }
 
