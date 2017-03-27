@@ -65,6 +65,7 @@ $lang->bug->fromCase         = '来源用例';
 $lang->bug->toCase           = '生成用例';
 $lang->bug->colorTag         = '颜色标签';
 $lang->bug->lowBug           = '低级错误';
+$lang->bug->phase            = '发现阶段';
 
 /* 方法列表。*/
 $lang->bug->index              = '首页';
@@ -240,6 +241,14 @@ $lang->bug->resolutionList['tostory']    = '转为需求';
 
 $lang->bug->lowBugList[0] = '否';
 $lang->bug->lowBugList[1] = '是';
+
+$lang->bug->phaseList['design']     = '设计准备';
+$lang->bug->phaseList['smoke']      = '冒烟测试';
+$lang->bug->phaseList['auto']       = '自动化测试';
+$lang->bug->phaseList['test']       = '测试阶段';
+$lang->bug->phaseList['preonline']  = 'v4预发布';
+$lang->bug->phaseList['online']     = 'v8线上';
+
 
 
 /* 统计报表。*/

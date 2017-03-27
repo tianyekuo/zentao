@@ -158,6 +158,10 @@
                 <td><span class='<?php echo 'lowBug' . zget($lang->bug->lowBug, $bug->lowBug);?>'><?php echo zget($lang->bug->lowBugList, $bug->lowBug)?></span></td>
               </tr>
               <tr>
+                <th><?php echo $lang->bug->phase;?></th>
+                <td><span class='<?php echo 'phase' . zget($lang->bug->phase, $bug->phase);?>'><?php echo zget($lang->bug->phaseList, $bug->phase)?></span></td>
+              </tr>
+              <tr>
                 <th><?php echo $lang->bug->severity;?></th>
                 <td><span class='<?php echo 'severity' . zget($lang->bug->severityList, $bug->severity);?>'><?php echo zget($lang->bug->severityList, $bug->severity)?></span></td>
               </tr>

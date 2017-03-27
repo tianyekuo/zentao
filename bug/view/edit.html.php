@@ -127,6 +127,10 @@ js::set('oldResolvedBuild'       , $bug->resolvedBuild);
             <td><?php echo html::select('lowBug', $lang->bug->lowBugList, $bug->lowBug, "class='form-control'");?></td>
           </tr>
           <tr>
+            <th><?php echo $lang->bug->phase;?></th>
+            <td><?php echo html::select('phase', $lang->bug->phaseList, $bug->phase, "class='form-control'");?></td>
+          </tr>
+          <tr>
             <th><?php echo $lang->bug->severity;?></th>
             <td><?php echo html::select('severity', $lang->bug->severityList, $bug->severity, "class='form-control'");?></td>
           </tr>

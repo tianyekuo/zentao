@@ -142,6 +142,9 @@ $lang->bug->remindTask           = 'This Bug has been converted to Task. Do you 
 $lang->bug->skipClose            = 'Bug %s is not resolved. You cannot close it.';
 $lang->bug->applyTemplate        = 'Apply Template';
 
+
+$lang->bug->lowBug   = "low bug";
+
 /* 模板。*/
 $lang->bug->tplStep   = "<p>[Steps]</p>\n";
 $lang->bug->tplResult = "<p>[Results]</p>\n";
@@ -236,6 +239,15 @@ $lang->bug->resolutionList['notrepro']   = 'Irreproducible';
 $lang->bug->resolutionList['postponed']  = 'Postponed';
 $lang->bug->resolutionList['willnotfix'] = "Not to Resolve";
 $lang->bug->resolutionList['tostory']    = 'Transfer to Story';
+
+
+$lang->bug->phase                   = 'phase';
+$lang->bug->phaseList['design']     = 'design';
+$lang->bug->phaseList['smoke']      = 'smoke';
+$lang->bug->phaseList['auto']       = 'automation';
+$lang->bug->phaseList['test']       = 'test';
+$lang->bug->phaseList['preonline']  = 'preonline';
+$lang->bug->phaseList['online']     = 'online';
 
 /* 统计报表。*/
 $lang->bug->report = new stdclass();

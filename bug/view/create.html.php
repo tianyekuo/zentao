@@ -88,7 +88,8 @@ js::set('refresh', $lang->refresh);
       <?php $showBrowser = strpos(",$showFields,", ',browser,') !== false;?>
       <tr>
         <th><?php echo $lang->bug->type;?></th>
-        <td>
+        <td colspan='2'>
+          <!--div class='clearfix' id='input-group'-->
           <div class='clearfix' id='bugTypeInputGroup'>
             <?php
             /* Remove the unused types. */
@@ -99,6 +100,8 @@ js::set('refresh', $lang->refresh);
             ?>
             <span class='input-group-addon fix-border'><?php echo $lang->bug->lowBug?></span>
             <?php echo html::select('lowBug', $lang->bug->lowBugList, $lowBug, "class='form-control'");?>
+            <span class='input-group-addon fix-border'><?php echo $lang->bug->phase?></span>
+            <?php echo html::select('phase', $lang->bug->phaseList, $phase, "class='form-control'");?>
             <?php if($showOS):?>
             <span class='input-group-addon fix-border'><?php echo $lang->bug->os?></span>
             <?php echo html::select('os', $lang->bug->osList, $os, "class='form-control'");?>
