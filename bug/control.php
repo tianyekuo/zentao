@@ -255,7 +255,8 @@ class bug extends control
         $severity   = 3;
         $type       = 'codeerror';
         $lowBug     = 0;
-        $phase     = 'test';
+        $phase      = 'test';
+        $causedBy   = '';
 
         /* Parse the extras. */
         $extras = str_replace(array(',', ' '), array('&', ''), $extras);
@@ -348,6 +349,7 @@ class bug extends control
         $this->view->branches         = $branches;
         $this->view->lowBug           = $lowBug;
         $this->view->phase            = $phase;
+        $this->view->causedBy         = $causedBy;
 
         
         #var_dump($this->view->phase);
@@ -1440,6 +1442,15 @@ class bug extends control
                 {
                     $mailto = trim($mailto);
                     if(isset($users[$mailto])) $bug->mailto .= $users[$mailto] . ',';
+                }
+
+                $bug->causedBy = trim(trim($bug->causedBy), ',');
+                $causedBys     = explode(',', $bug->causedBy);
+                $bug->causedBy = '';
+                foreach($causedBys as $causedBy)
+                {
+                    $causedBy = trim($causedBy);
+                    if(isset($users[$causedBy])) $bug->causedBy .= $users[$causedBy] . ',';
                 }
 
                 unset($bug->caseVersion);

@@ -35,6 +35,7 @@ $lang->bug->confirmed        = '是否确认';
 $lang->bug->toTask           = '转任务';
 $lang->bug->toStory          = '转需求';
 $lang->bug->mailto           = '抄送给';
+$lang->bug->causedBy         = '责任人';
 $lang->bug->openedBy         = '由谁创建';
 $lang->bug->openedDate       = '创建日期';
 $lang->bug->openedDateAB     = '创建日期';

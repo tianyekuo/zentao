@@ -52,6 +52,7 @@ class bugModel extends model
             ->cleanInt('product, module, severity')
             ->join('openedBuild', ',')
             ->join('mailto', ',')
+            ->join('causedBy', ',')
             ->remove('files, labels,uid')
             ->get();
 
@@ -458,6 +459,7 @@ class bugModel extends model
             ->add('lastEditedDate', $now)
             ->join('openedBuild', ',')
             ->join('mailto', ',')
+            ->join('causedBy', ',')
             ->setIF($this->post->assignedTo  != $oldBug->assignedTo, 'assignedDate', $now)
             ->setIF($this->post->resolvedBy  != '' and $this->post->resolvedDate == '', 'resolvedDate', $now)
             ->setIF($this->post->resolution  != '' and $this->post->resolvedDate == '', 'resolvedDate', $now)
@@ -621,6 +623,7 @@ class bugModel extends model
             ->setDefault('assignedDate', $now)
             ->remove('comment')
             ->join('mailto', ',')
+            ->join('causedBy', ',')
             ->get();
 
         $this->dao->update(TABLE_BUG)
@@ -649,6 +652,7 @@ class bugModel extends model
             ->setDefault('lastEditedDate', $now)
             ->remove('comment')
             ->join('mailto', ',')
+            ->join('causedBy', ',')
             ->get();
 
         $this->dao->update(TABLE_BUG)->data($bug)->where('id')->eq($bugID)->exec();

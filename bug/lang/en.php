@@ -35,6 +35,7 @@ $lang->bug->confirmed        = 'Confirmed';
 $lang->bug->toTask           = 'Convert to Task';
 $lang->bug->toStory          = 'Convert to Story';
 $lang->bug->mailto           = 'Mail To';
+$lang->bug->causedBy         = 'Responsible For';
 $lang->bug->openedBy         = 'Open By';
 $lang->bug->openedDate       = 'Open On';
 $lang->bug->openedDateAB     = 'Open On';

@@ -201,6 +201,10 @@
                 <th><?php echo $lang->bug->mailto;?></th>
                 <td><?php $mailto = explode(',', str_replace(' ', '', $bug->mailto)); foreach($mailto as $account) echo ' ' . $users[$account]; ?></td>
               </tr>
+              <tr>
+                <th><?php echo $lang->bug->causedBy;?></th>
+                <td><?php $causedBy = explode(',', str_replace(' ', '', $bug->causedBy)); foreach($causedBy as $account) echo ' ' . $users[$account]; ?></td>
+              </tr>
             </table>
           </div>
           <div class='tab-pane' id='legendPrjStoryTask'>

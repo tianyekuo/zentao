@@ -166,6 +166,10 @@ js::set('oldResolvedBuild'       , $bug->resolvedBuild);
             <th><?php echo $lang->bug->mailto;?></th>
             <td><?php echo html::select('mailto[]', $users, str_replace(' ', '', $bug->mailto), 'class="form-control chosen" multiple');?></td>
           </tr>
+          <tr>
+            <th><?php echo $lang->bug->causedBy;?></th>
+            <td><?php echo html::select('causedBy[]', $users, str_replace(' ', '', $bug->causedBy), 'class="form-control chosen" multiple');?></td>
+          </tr>
         </table>
       </fieldset>
 

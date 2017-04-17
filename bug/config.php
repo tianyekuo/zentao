@@ -21,7 +21,7 @@ $config->bug->list->allFields = 'id, module, project, story, task,
     duplicateBug, linkBug, 
     case,
     lastEditedBy,
-    lastEditedDate, lowBug, phase';
+    lastEditedDate, lowBug, phase, causedBy';
 $config->bug->list->defaultFields = 'id,severity,pri,title,openedBy,assignedTo,resolvedBy,resolution';
 
 $config->bug->list->exportFields = 'id, product, module, project, story, task, 
@@ -34,7 +34,7 @@ $config->bug->list->exportFields = 'id, product, module, project, story, task,
     duplicateBug, linkBug, 
     case,
     lastEditedBy,
-    lastEditedDate, files,lowBug, phase';
+    lastEditedDate, files,lowBug, phase, causedBy';
 
 $config->bug->list->customCreateFields      = 'project,story,task,pri,severity,os,browser,mailto,keywords';
 $config->bug->list->customBatchCreateFields = 'module,project,steps,type,pri,severity,os,browser,keywords';
@@ -133,6 +133,7 @@ $config->bug->search['params']['closedBy']      = array('operator' => '=',      
 $config->bug->search['params']['lastEditedBy']  = array('operator' => '=',       'control' => 'select', 'values' => 'users');
 
 $config->bug->search['params']['mailto']        = array('operator' => '=',       'control' => 'select', 'values' => 'users');
+$config->bug->search['params']['causedBy']      = array('operator' => '=',       'control' => 'select', 'values' => 'users');
 
 $config->bug->search['params']['openedBuild']   = array('operator' => 'include', 'control' => 'select', 'values' => 'builds');
 $config->bug->search['params']['resolvedBuild'] = array('operator' => '=',       'control' => 'select', 'values' => 'builds');
@@ -142,8 +143,9 @@ $config->bug->search['params']['assignedDate']  = array('operator' => '=',      
 $config->bug->search['params']['resolvedDate']  = array('operator' => '=',      'control' => 'input',  'values' => '', 'class' => 'date');
 $config->bug->search['params']['closedDate']    = array('operator' => '=',      'control' => 'input',  'values' => '', 'class' => 'date');
 $config->bug->search['params']['lastEditedDate']= array('operator' => '=',      'control' => 'input',  'values' => '', 'class' => 'date');
-$config->bug->search['fields']['lowBug'] = $lang->bug->lowBug;
-$config->bug->search['fields']['phase'] = $lang->bug->phase;
+$config->bug->search['fields']['lowBug']        = $lang->bug->lowBug;
+$config->bug->search['fields']['phase']         = $lang->bug->phase;
+$config->bug->search['fields']['causedBy']      = $lang->bug->causedBy;
 
 $config->bug->datatable = new stdclass();
 $config->bug->datatable->defaultField = array('id', 'severity', 'pri', 'title', 'status', 'openedBy', 'openedDate', 'assignedTo', 'resolvedBy', 'resolution', 'resolvedDate', 'actions');

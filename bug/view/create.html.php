@@ -257,6 +257,17 @@ js::set('refresh', $lang->refresh);
       </tr>
       <?php endif;?>
       <tr>
+        <th><?php echo $lang->bug->causedBy;?></th>
+         <td>
+           <div class='input-group' id='contactListGroup'>
+          <?php 
+          echo html::select('causedby[]', $users, str_replace(' ', '', $causedBy), "class='form-control chosen' multiple");
+          echo $this->fetch('my', 'buildContactLists');
+          ?>
+          </div>
+         </td>
+      </tr>
+      <tr>
         <th><?php echo $lang->bug->files;?></th>
         <td colspan='2'><?php echo $this->fetch('file', 'buildform', 'fileCount=1&percent=0.85');?></td>
       </tr>
